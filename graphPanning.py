@@ -1,7 +1,6 @@
 #Author - Ajay Amarnath
 #Email - amarnathajay@gmail.com
 
-#import numpy
 import matplotlib.pylab as plotter
 from mpl_toolkits.axes_grid1 import host_subplot
 import matplotlib.animation as animation
@@ -11,6 +10,7 @@ fig.suptitle("Data example for a panning graph", fontsize = 12)
 animatedGraph = fig.add_subplot(1, 1, 1)
 animatedGraph.set_title('Magnitude vs heading')
 animatedGraph.set_xlim(0, 20)
+animatedGraph.set_ylim(0, 10)
 animatedGraph.grid(True)
 animatedGraph.set_xlabel("Hdng (deg)")
 animatedGraph.set_ylabel("Magnitude")
@@ -43,7 +43,7 @@ def update(self):
     global yData
     global i
 
-    x.append(float(xData[i]))
+    x.append(int(xData[i]))
     y.append(float(yData[i]))
 
     print(x[i], y[i])
@@ -60,10 +60,7 @@ def update(self):
 #for eachNum in xData:
 #    print(xData[eachNum], yData[eachNum])
 
-simulation = animation.FuncAnimation(fig, update, blit=False, frames=359, interval=20, repeat=False)
-
-# Uncomment the next line if you want to save the animation
-#simulation.save(filename='sim.mp4',fps=30,dpi=300)
+simulation = animation.FuncAnimation(fig, update, blit=False, frames=359, interval=100, repeat=False)
 
 plotter.show()
 
