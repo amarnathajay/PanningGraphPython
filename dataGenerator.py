@@ -7,4 +7,4 @@ for x in range(360):
     line2 = str(random.uniform(1,10))
     data.write(line1 + ' ' + line2 + '\n')
     data.close()
-    time.sleep(0.01)
+    time.sleep(0.1)
