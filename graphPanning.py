@@ -2,15 +2,11 @@
 #Email - amarnathajay@gmail.com
 
 #import numpy
-from matplotlib.pylab import *
+import matplotlib.pylab as plotter
 from mpl_toolkits.axes_grid1 import host_subplot
 import matplotlib.animation as animation
 
-
-font = {'size' : 9}
-matplotlib.rc('font', **font)
-
-fig = figure()
+fig = plotter.figure()
 fig.suptitle("Data example for a panning graph", fontsize = 12)
 animatedGraph = fig.add_subplot(1, 1, 1)
 animatedGraph.set_title('Magnitude vs heading')
@@ -64,12 +60,12 @@ def update(self):
 #for eachNum in xData:
 #    print(xData[eachNum], yData[eachNum])
 
-simulation = animation.FuncAnimation(fig, update, blit=False, frames=200, interval=20, repeat=False)
+simulation = animation.FuncAnimation(fig, update, blit=False, frames=359, interval=20, repeat=False)
 
 # Uncomment the next line if you want to save the animation
 #simulation.save(filename='sim.mp4',fps=30,dpi=300)
 
-plt.show()
+plotter.show()
 
 
 
